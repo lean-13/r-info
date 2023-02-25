@@ -9,7 +9,11 @@
 
 programa simulacroParcialA
 
-    proceso Calle( es Flor: numero; es Papel: numero; TerminoCalle: boolean; )
+    proceso Calle( es EsqVacia: numero )
+    variables
+        TerminoCalle: boolean;
+        Flor: numero;
+        Papel: numero;
     comenzar
         
         TerminoCalle:= ( ~ ((Flor = 5) | (Papel = 2)))
@@ -25,7 +29,7 @@ programa simulacroParcialA
                 EsqVacia:= EsqVacia + 1;
 
     fin
-    proceso ContarFlor()
+    proceso ContarFlor(es Flor: numero)
     comenzar
 
         Mientras (HayFlorEnLaEsquina)
@@ -35,7 +39,7 @@ programa simulacroParcialA
             DepositarFlor
 
     fin
-    proceso ContarPapel()
+    proceso ContarPapel(es Papel: numero)
     comenzar
 
         Mientras (HayPapelEnLaEsquina)
