@@ -1,0 +1,14 @@
+{
+  Realice un programa que le permita al robot recorrer todas las calles pares de
+  la ciudad. Por cada calle debe avanzar hasta encontrar una esquina con 5
+  flores o 2 papeles que puede no existir. Las esquinas deben quedar sin
+  modificar.
+  Al finalizar deberá informar la cantidad total de esquinas vacías que encontró
+  durante todo su recorrido. Se debe modularizar.
+}
+
+programa simulacroParcialA
+
+proceso 
+
+
