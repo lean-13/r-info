@@ -9,6 +9,57 @@
 
 programa simulacroParcialA
 
-proceso 
+    proceso Calle( es Flor: numero; es Papel: numero; TerminoCalle: boolean; )
+    comenzar
+        
+        TerminoCalle:= ( ~ ((Flor = 5) | (Papel = 2)))
+
+        mientras (TerminoCalle & posca < 100)
+            Flor:= 0;
+            Papel:= 0;
+            ContarPapel(Papel)
+            ContarFlor(Flor)
+            mover
+
+            si ((Flor = 0) & (Papel = 0))
+                EsqVacia:= EsqVacia + 1;
+
+    fin
+    proceso ContarFlor()
+    comenzar
+
+        Mientras (HayFlorEnLaEsquina)
+            JuntarFlor
+            Flor:= Flor + 1;
+        repetir Flor    
+            DepositarFlor
+
+    fin
+    proceso ContarPapel()
+    comenzar
+
+        Mientras (HayPapelEnLaEsquina)
+            JuntarPapel
+            Papel:= Papel + 1;
+        repetir Papel   
+            DepositarPapel
+
+    fin
 
 
+variables
+    EsqVacia: numero;
+comenzar
+
+    EsqVacia:= 0;
+
+    pos(1,1);
+
+    repetir (49)
+        Calle(EsqVacia);
+        pos(posca + 1,1);
+    Calle(EsqVacia);
+
+    informar(EsqVacia)
+
+fin
