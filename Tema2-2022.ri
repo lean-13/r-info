@@ -1,0 +1,91 @@
+
+{
+    cuadrado lado 2 luego, lado 5, luego lado 8. diferencia de 3
+    hasta encontrar un cuadrado con 7 esquinas sin flores que seguro existe.
+    comienza en el 1,1 y pasa al 2,1 y a si.
+    procesos:
+    contar pepeles por esquina, no se debe modificar esquina
+    proceso cuadrado debe recibir el dato de lado, 
+    debe informar las esquinas con 15 papeles y esquinas sin flor
+
+
+}
+Procesos
+    proceso cuadrado (es papelesEsq : numero, e 7EsqSinFlor: numero)
+    comenzar
+
+        7EsqSinFlor:= 0 ;
+
+        repetir 4
+            repetir ( lado )
+
+                ContPapel(15PapelesEsq, PapelesEsq);
+                ContFlor(FloresEsq, TotalEsqSinFlor, 7EsqSinFlor);
+                
+                si (FloresEsq = 0)
+                    TotalEsqSinFlor:= TotalEsqSinFlor + 1 ;
+                
+                mover
+            derecha
+        si (7EsqSinFlor = 7)
+            CuadradoSinFlor:= v ;
+            
+
+    fin
+    proceso ContPapel ()
+    comenzar
+
+        PapelesEsq:= 0;
+        
+        mientras (HayPapelEnLaEsquina)
+            JuntarPapel
+            PapelesEsq:= + 1 ;
+
+        repetir (PapelesEsq)
+            DepositarPapel
+        
+        si (papelesEsq = 15)
+            15PapelesEsq:= 15PapelesEsq + 1 ;
+
+
+    fin 
+    proceso ContFlor ()
+    comenzar
+
+        FloresEsq:= 0;
+
+        mientras (HayFlorEnLaEsquina)
+            JuntarFlor
+            FloresEsq:= FloresEsq + 1 ;
+        si (FloresEsq = 0)
+            TotalEsqSinFlor:= TotalEsqSinFlor + 1 ;
+            7EsqSinFlor:= 7EsqSinFlor + 1 ;
+
+    fin
+
+
+variables
+    CuadradoSinFlor : boolean;
+    TotalEsqSinFlor : numero;
+    15PapelesEsq : numero;
+
+comenzar
+
+    pos(1,1)
+    CuadradoSinFlor := F ;
+    15PapelesEsq:= 0;
+    TotalEsqSinFlor:= 0;
+    Lado:= 2;
+
+    mientras ( ~ CuadradoSinFlor) 
+        Cuadrado(Lado, CuadradoSinFlor, TotalEsqSinFlor, 15PapelesEsq)
+
+    mientras ( ~ CuadradoSinFlor) 
+        Cuadrado(Lado, CuadradoSinFlor, TotalEsqSinFlor, 15PapelesEsq)
+        Lado:= Lado + 3 ;
+        pos(posca +1,1);
+
+    informar(15PapelesEsq)
+
+
+fin
