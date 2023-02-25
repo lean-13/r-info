@@ -11,7 +11,9 @@
 
 }
 programa
-    proceso cuadrado (es papelesEsq : numero, e 7EsqSinFlor: numero)
+    proceso cuadrado (e Lado: numero , es CuadradoSinFlor: boolean , es TotalEsqSinFlor: numero, es 15PapelesEsq: numero )
+    variables
+        7EsqSinFlor: numero;
     comenzar
 
         7EsqSinFlor:= 0 ;
@@ -32,7 +34,9 @@ programa
             
 
     fin
-    proceso ContPapel ()
+    proceso ContPapel (es 15PapelesEsq: numero)
+    variables
+        papelesEsq : numero;
     comenzar
 
         PapelesEsq:= 0;
@@ -49,7 +53,9 @@ programa
 
 
     fin 
-    proceso ContFlor ()
+    proceso ContFlor (es TotalEsqSinFlor: numero, es 7EsqSinFlor: numero)
+    variables
+        FloresEsq: numero;
     comenzar
 
         FloresEsq:= 0;
@@ -78,14 +84,14 @@ comenzar
     Lado:= 2;
 
     mientras ( ~ CuadradoSinFlor) 
-        Cuadrado(Lado, CuadradoSinFlor, TotalEsqSinFlor, 15PapelesEsq)
+        Cuadrado(Lado, CuadradoSinFlor, TotalEsqSinFlor, 15PapelesEsq);
 
     mientras ( ~ CuadradoSinFlor) 
-        Cuadrado(Lado, CuadradoSinFlor, TotalEsqSinFlor, 15PapelesEsq)
+        Cuadrado(Lado, CuadradoSinFlor, TotalEsqSinFlor, 15PapelesEsq);
         Lado:= Lado + 3 ;
         pos(posca +1,1);
 
-    informar(15PapelesEsq)
+    informar(15PapelesEsq);
 
 
 fin
