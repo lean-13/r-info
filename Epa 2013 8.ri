@@ -1,0 +1,58 @@
+programa EjercicioAdicional8
+
+    proceso calleImpar()
+    variables
+        Flores:numero;
+    comenzar
+        Flores:= 0;
+        {{ Mientras flores es diferente a 0 }}
+        mientras (Flores <> 0)
+            JuntarFlores(Flores)
+            mover
+    fin
+    proceso JuntarFlores(es Flores: numero)
+    comenzar
+        mientras (HayFlorEnLaEsquina)
+            tomarFlor
+            Flores:= Flores + 1;
+    fin
+    proceso Isquierda()
+    comenzar
+        repetir (3)
+            derecha
+    fin
+    proceso RecorrerAv(es AvPapelesTot: numero)
+    comenzar
+        repetir 99
+            JuntarPapeles(AvPapelesTot)
+            mover
+        JuntarPapeles(AvPapelesTot)
+    fin
+    proceso JuntarPapeles(es AvPapelesTot: numero)
+    comenzar
+
+        mientras (HayPapelEnLaEsquina)
+            tomarPapel
+            AvPapelesTot:= AvPapelesTot + 1;
+    fin
+
+variables
+    AvPapelesTot: numero;
+comenzar
+    AvPapelesTot:= 0;
+    {{ Recorre calles impar }}
+    pos(1,1);
+    derecha
+    repetir (49)
+        calleImpar()
+        pos(1, posca + 1)
+    Isquierda
+    {{ recorre avenidas }}
+    pos(10,1)
+    repetir (2)
+        RecorrerAv(AvPapelesTot)
+        pos(posav + 1,1)
+    RecorrerAv(AvPapelesTot)
+    {{ informar papeles totales de la avenida }}
+    informar(AvPapelesTot)
+fin

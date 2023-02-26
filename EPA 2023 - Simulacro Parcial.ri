@@ -33,7 +33,7 @@ programa simulacroParcialA
     comenzar
 
         Mientras (HayFlorEnLaEsquina)
-            JuntarFlor
+            tomarFlor
             Flor:= Flor + 1;
         repetir Flor    
             DepositarFlor
@@ -43,7 +43,7 @@ programa simulacroParcialA
     comenzar
 
         Mientras (HayPapelEnLaEsquina)
-            JuntarPapel
+            tomarPapel
             Papel:= Papel + 1;
         repetir Papel   
             DepositarPapel

@@ -42,7 +42,7 @@ programa
         PapelesEsq:= 0;
         
         mientras (HayPapelEnLaEsquina)
-            JuntarPapel
+            tomarPapel
             PapelesEsq:= + 1 ;
 
         repetir (PapelesEsq)
@@ -61,7 +61,7 @@ programa
         FloresEsq:= 0;
 
         mientras (HayFlorEnLaEsquina)
-            JuntarFlor
+            tomarFlor
             FloresEsq:= FloresEsq + 1 ;
         si (FloresEsq = 0)
             TotalEsqSinFlor:= TotalEsqSinFlor + 1 ;
