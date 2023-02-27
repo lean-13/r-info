@@ -1,0 +1,57 @@
+programa EjercicioAdicional7
+
+    proceso Avenida8(ES Flores: numero, ES Papeles)
+    variables
+        EsqVacia: boolean;
+        EsqPapeles: numero;
+        EsqFlores: numero;
+    comenzar
+        EsqVacia:= F;
+
+        mientras (~ EsqVacia)
+            EsqPapel:= 0;
+            EsqFlores:= 0;
+
+            JuntarFlores(EsqFlores)
+            JuntarPapeles(EsqPapeles)
+
+            Flores:= Flores + EsqFlores;
+            Papeles:= Papeles + EsqPapeles;
+
+            mover
+            si (EsqFlores == 0 || EsqPapeles == 0)
+                EsqVacia:= V;
+
+    fin
+    proceso JuntarFlores(ES EsqFlores: numero)
+    comenzar
+        mientras (HayFlorEnLaEsquina)
+            tomarFlor;
+            EsqFlores:= EsqFlores + 1;
+    fin
+    proceso JuntarPapeles(ES EsqPapeles: numero)
+    comenzar
+        mientras (HayPapelEnLaEsquina)
+            tomarPapel;
+            EsqPapeles:= EsqPapeles + 1;
+    fin
+    proceso Rectangulo(E Papeles:numero, E Flores: numero)
+    comenzar
+        
+        repetir 2
+            repetir (Flores)
+                mover
+            derecha
+            repetir (Papeles)
+                mover
+    fin
+
+variables
+    Flores: numero;
+    Papeles: numero;
+comenzar
+    pos(8,1)
+    Avenida8(Flores, Papeles)
+    pos(1,1)
+    Rectangulo(Flores, Papeles)
+fin
